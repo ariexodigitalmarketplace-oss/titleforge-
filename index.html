@@ -35,9 +35,7 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
   body {
     background: var(--bg);
     color: var(--text);
@@ -48,7 +46,6 @@
     overflow-x: hidden;
   }
 
-  /* ───── noise overlay ───── */
   body::before {
     content: '';
     position: fixed;
@@ -59,7 +56,6 @@
     opacity: 0.4;
   }
 
-  /* ───── grid bg ───── */
   body::after {
     content: '';
     position: fixed;
@@ -72,12 +68,9 @@
     z-index: 0;
   }
 
-  /* ───── NAV ───── */
   nav {
     position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
+    top: 0; left: 0; right: 0;
     z-index: 100;
     padding: 0 2rem;
     height: 64px;
@@ -90,58 +83,22 @@
     border-bottom: 1px solid var(--border);
   }
 
-  .logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
-
+  .logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
   .logo-icon {
-    width: 32px;
-    height: 32px;
+    width: 32px; height: 32px;
     background: var(--accent);
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
   }
-
-  .logo-icon svg {
-    width: 18px;
-    height: 18px;
-    fill: #0a0a0f;
-  }
-
-  .logo-text {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 20px;
-    color: var(--text);
-    letter-spacing: -0.5px;
-  }
-
+  .logo-icon svg { width: 18px; height: 18px; fill: #0a0a0f; }
+  .logo-text { font-family: var(--font-display); font-weight: 700; font-size: 20px; color: var(--text); letter-spacing: -0.5px; }
   .logo-text span { color: var(--accent); }
 
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    list-style: none;
-  }
-
-  .nav-links a {
-    color: var(--text2);
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 400;
-    transition: color 0.2s;
-  }
-
+  .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+  .nav-links a { color: var(--text2); text-decoration: none; font-size: 14px; font-weight: 400; transition: color 0.2s; }
   .nav-links a:hover { color: var(--text); }
-
   .nav-cta {
-    background: var(--accent);
+    background: var(--accent) !important;
     color: #0a0a0f !important;
     padding: 8px 20px;
     border-radius: 8px;
@@ -149,50 +106,32 @@
     font-size: 14px;
     transition: background 0.2s, transform 0.15s !important;
   }
-
   .nav-cta:hover { background: var(--accent2) !important; transform: translateY(-1px); }
 
-  .nav-mobile-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: var(--text);
-    cursor: pointer;
-    padding: 4px;
-  }
+  .nav-mobile-btn { display: none; background: none; border: none; color: var(--text); cursor: pointer; padding: 4px; }
 
-  /* ───── HERO ───── */
   .hero {
-    position: relative;
-    z-index: 1;
+    position: relative; z-index: 1;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 120px 2rem 80px;
     text-align: center;
   }
 
   .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    display: inline-flex; align-items: center; gap: 8px;
     background: var(--accent-dim);
     border: 1px solid rgba(232,255,87,0.2);
     color: var(--accent);
     padding: 6px 16px;
     border-radius: 100px;
-    font-size: 13px;
-    font-weight: 500;
+    font-size: 13px; font-weight: 500;
     margin-bottom: 2rem;
     animation: fadeUp 0.6s ease both;
   }
-
   .hero-badge::before {
     content: '';
-    width: 6px;
-    height: 6px;
+    width: 6px; height: 6px;
     background: var(--accent);
     border-radius: 50%;
     animation: pulse 2s ease infinite;
@@ -212,13 +151,8 @@
     margin-bottom: 1.5rem;
     animation: fadeUp 0.6s ease 0.1s both;
   }
-
   .hero h1 .line1 { display: block; color: var(--text); }
-  .hero h1 .line2 {
-    display: block;
-    color: var(--accent);
-    -webkit-text-stroke: 1px var(--accent);
-  }
+  .hero h1 .line2 { display: block; color: var(--accent); -webkit-text-stroke: 1px var(--accent); }
 
   .hero-sub {
     font-size: clamp(1rem, 2vw, 1.2rem);
@@ -230,138 +164,54 @@
   }
 
   .hero-actions {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
     animation: fadeUp 0.6s ease 0.3s both;
   }
 
   .btn-primary {
-    background: var(--accent);
-    color: #0a0a0f;
-    border: none;
-    padding: 14px 32px;
-    border-radius: 10px;
-    font-family: var(--font-body);
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-    text-decoration: none;
-    display: inline-block;
+    background: var(--accent); color: #0a0a0f;
+    border: none; padding: 14px 32px; border-radius: 10px;
+    font-family: var(--font-body); font-size: 15px; font-weight: 500;
+    cursor: pointer; transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+    text-decoration: none; display: inline-block;
   }
-
-  .btn-primary:hover {
-    background: var(--accent2);
-    transform: translateY(-2px);
-    box-shadow: 0 12px 40px rgba(232,255,87,0.25);
-  }
+  .btn-primary:hover { background: var(--accent2); transform: translateY(-2px); box-shadow: 0 12px 40px rgba(232,255,87,0.25); }
 
   .btn-ghost {
-    background: transparent;
-    color: var(--text2);
-    border: 1px solid var(--border2);
-    padding: 14px 32px;
-    border-radius: 10px;
-    font-family: var(--font-body);
-    font-size: 15px;
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
-    text-decoration: none;
-    display: inline-block;
+    background: transparent; color: var(--text2);
+    border: 1px solid var(--border2); padding: 14px 32px; border-radius: 10px;
+    font-family: var(--font-body); font-size: 15px;
+    cursor: pointer; transition: border-color 0.2s, color 0.2s, background 0.2s;
+    text-decoration: none; display: inline-block;
   }
+  .btn-ghost:hover { border-color: rgba(255,255,255,0.25); color: var(--text); background: var(--bg3); }
 
-  .btn-ghost:hover {
-    border-color: rgba(255,255,255,0.25);
-    color: var(--text);
-    background: var(--bg3);
-  }
-
-  /* ───── STATS ───── */
   .stats-bar {
-    position: relative;
-    z-index: 1;
-    display: flex;
-    justify-content: center;
-    gap: 0;
-    flex-wrap: wrap;
+    position: relative; z-index: 1;
+    display: flex; justify-content: center; gap: 0; flex-wrap: wrap;
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     background: var(--bg2);
   }
-
-  .stat {
-    padding: 24px 40px;
-    text-align: center;
-    border-right: 1px solid var(--border);
-  }
-
+  .stat { padding: 24px 40px; text-align: center; border-right: 1px solid var(--border); }
   .stat:last-child { border-right: none; }
+  .stat-num { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--accent); display: block; line-height: 1; margin-bottom: 4px; }
+  .stat-label { font-size: 13px; color: var(--text3); }
 
-  .stat-num {
-    font-family: var(--font-display);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--accent);
-    display: block;
-    line-height: 1;
-    margin-bottom: 4px;
-  }
-
-  .stat-label {
-    font-size: 13px;
-    color: var(--text3);
-  }
-
-  /* ───── GENERATOR SECTION ───── */
   .generator-section {
-    position: relative;
-    z-index: 1;
+    position: relative; z-index: 1;
     padding: 80px 2rem;
     max-width: 900px;
     margin: 0 auto;
   }
 
-  .section-label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 1rem;
-  }
+  .section-label { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+  .section-label span { font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
 
-  .section-label span {
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent);
-  }
+  .section-title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 700; letter-spacing: -1px; margin-bottom: 0.75rem; line-height: 1.1; }
+  .section-desc { color: var(--text2); font-size: 1.05rem; font-weight: 300; margin-bottom: 2.5rem; }
 
-  .section-label::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background: var(--border);
-  }
-
-  .section-title {
-    font-family: var(--font-display);
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 700;
-    letter-spacing: -1px;
-    margin-bottom: 0.75rem;
-    line-height: 1.1;
-  }
-
-  .section-desc {
-    color: var(--text2);
-    font-size: 1.05rem;
-    font-weight: 300;
-    margin-bottom: 2.5rem;
-  }
-
-  /* ───── GENERATOR CARD ───── */
   .gen-card {
     background: var(--bg2);
     border: 1px solid var(--border);
@@ -370,167 +220,65 @@
     position: relative;
     overflow: hidden;
   }
-
   .gen-card::before {
     content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 1px;
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
     background: linear-gradient(90deg, transparent, var(--accent), transparent);
     opacity: 0.5;
   }
 
-  .gen-label {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--text2);
-    margin-bottom: 10px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
+  .gen-label { font-size: 13px; font-weight: 500; color: var(--text2); margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
   .gen-label svg { width: 14px; height: 14px; fill: var(--text3); }
 
   textarea#video-desc {
-    width: 100%;
-    min-height: 140px;
+    width: 100%; min-height: 140px;
     background: var(--bg3);
     border: 1px solid var(--border2);
     border-radius: var(--radius);
     color: var(--text);
     font-family: var(--font-body);
-    font-size: 15px;
-    font-weight: 300;
+    font-size: 15px; font-weight: 300;
     padding: 16px 18px;
-    resize: vertical;
-    outline: none;
+    resize: vertical; outline: none;
     transition: border-color 0.2s, box-shadow 0.2s;
     line-height: 1.6;
   }
-
   textarea#video-desc::placeholder { color: var(--text3); }
+  textarea#video-desc:focus { border-color: rgba(232,255,87,0.35); box-shadow: 0 0 0 3px rgba(232,255,87,0.06); }
 
-  textarea#video-desc:focus {
-    border-color: rgba(232,255,87,0.35);
-    box-shadow: 0 0 0 3px rgba(232,255,87,0.06);
-  }
+  .gen-options { display: flex; gap: 12px; margin-top: 1.25rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: center; }
+  .gen-options-label { font-size: 13px; color: var(--text3); flex-shrink: 0; }
 
-  .gen-options {
-    display: flex;
-    gap: 12px;
-    margin-top: 1.25rem;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    align-items: center;
-  }
-
-  .gen-options-label {
-    font-size: 13px;
-    color: var(--text3);
-    flex-shrink: 0;
-  }
-
-  .cat-chips {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-  }
-
+  .cat-chips { display: flex; gap: 8px; flex-wrap: wrap; }
   .cat-chip {
-    padding: 6px 14px;
-    border-radius: 100px;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1px solid var(--border2);
-    background: transparent;
-    color: var(--text2);
-    transition: all 0.2s;
-    font-family: var(--font-body);
+    padding: 6px 14px; border-radius: 100px;
+    font-size: 13px; font-weight: 500;
+    cursor: pointer; border: 1px solid var(--border2);
+    background: transparent; color: var(--text2);
+    transition: all 0.2s; font-family: var(--font-body);
   }
+  .cat-chip:hover { border-color: var(--accent); color: var(--accent); background: var(--accent-dim); }
+  .cat-chip.active { border-color: var(--accent); background: var(--accent); color: #0a0a0f; }
 
-  .cat-chip:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: var(--accent-dim);
-  }
-
-  .cat-chip.active {
-    border-color: var(--accent);
-    background: var(--accent);
-    color: #0a0a0f;
-  }
-
-  .gen-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-
-  .char-count {
-    font-size: 13px;
-    color: var(--text3);
-  }
+  .gen-footer { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .char-count { font-size: 13px; color: var(--text3); }
 
   .gen-btn {
-    background: var(--accent);
-    color: #0a0a0f;
-    border: none;
-    padding: 12px 28px;
-    border-radius: 10px;
-    font-family: var(--font-display);
-    font-size: 15px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    letter-spacing: 0.3px;
+    background: var(--accent); color: #0a0a0f;
+    border: none; padding: 12px 28px; border-radius: 10px;
+    font-family: var(--font-display); font-size: 15px; font-weight: 700;
+    cursor: pointer; transition: all 0.2s;
+    display: flex; align-items: center; gap: 8px; letter-spacing: 0.3px;
   }
-
-  .gen-btn:hover:not(:disabled) {
-    background: var(--accent2);
-    transform: translateY(-1px);
-    box-shadow: 0 8px 30px rgba(232,255,87,0.3);
-  }
-
-  .gen-btn:disabled {
-    opacity: 0.6;
-    cursor: not-allowed;
-  }
-
+  .gen-btn:hover:not(:disabled) { background: var(--accent2); transform: translateY(-1px); box-shadow: 0 8px 30px rgba(232,255,87,0.3); }
+  .gen-btn:disabled { opacity: 0.6; cursor: not-allowed; }
   .gen-btn svg { width: 16px; height: 16px; fill: #0a0a0f; }
 
-  /* ───── LOADING ───── */
-  .loading-state {
-    display: none;
-    padding: 3rem 0;
-    text-align: center;
-  }
-
+  .loading-state { display: none; padding: 3rem 0; text-align: center; }
   .loading-state.visible { display: block; }
 
-  .loader-dots {
-    display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 1.5rem;
-  }
-
-  .loader-dot {
-    width: 10px;
-    height: 10px;
-    background: var(--accent);
-    border-radius: 50%;
-    animation: dotBounce 1.2s ease infinite;
-  }
-
+  .loader-dots { display: flex; justify-content: center; gap: 8px; margin-bottom: 1.5rem; }
+  .loader-dot { width: 10px; height: 10px; background: var(--accent); border-radius: 50%; animation: dotBounce 1.2s ease infinite; }
   .loader-dot:nth-child(2) { animation-delay: 0.2s; }
   .loader-dot:nth-child(3) { animation-delay: 0.4s; }
 
@@ -539,422 +287,136 @@
     40% { transform: translateY(-14px); opacity: 1; }
   }
 
-  .loading-text {
-    color: var(--text2);
-    font-size: 14px;
-    animation: fadeInOut 2s ease infinite;
-  }
+  .loading-text { color: var(--text2); font-size: 14px; animation: fadeInOut 2s ease infinite; }
 
   @keyframes fadeInOut {
     0%, 100% { opacity: 0.5; }
     50% { opacity: 1; }
   }
 
-  /* ───── RESULTS ───── */
-  .results-section {
-    display: none;
-    margin-top: 2.5rem;
-  }
-
+  .results-section { display: none; margin-top: 2.5rem; }
   .results-section.visible { display: block; }
 
-  .results-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1.5rem;
-    flex-wrap: wrap;
-    gap: 1rem;
-  }
+  .results-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem; }
+  .results-title { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; color: var(--text); }
+  .results-meta { font-size: 13px; color: var(--text3); display: flex; align-items: center; gap: 6px; }
+  .results-meta::before { content: ''; width: 6px; height: 6px; background: var(--teal); border-radius: 50%; }
 
-  .results-title {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--text);
-  }
-
-  .results-meta {
-    font-size: 13px;
-    color: var(--text3);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .results-meta::before {
-    content: '';
-    width: 6px;
-    height: 6px;
-    background: var(--teal);
-    border-radius: 50%;
-  }
-
-  .filter-tabs {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
-  }
-
+  .filter-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 1.5rem; }
   .filter-tab {
-    padding: 5px 14px;
-    border-radius: 100px;
-    font-size: 12px;
-    font-weight: 500;
-    cursor: pointer;
-    border: 1px solid var(--border);
-    background: transparent;
-    color: var(--text3);
-    transition: all 0.2s;
-    font-family: var(--font-body);
+    padding: 5px 14px; border-radius: 100px; font-size: 12px; font-weight: 500;
+    cursor: pointer; border: 1px solid var(--border);
+    background: transparent; color: var(--text3);
+    transition: all 0.2s; font-family: var(--font-body);
   }
+  .filter-tab:hover, .filter-tab.active { border-color: var(--border2); color: var(--text); background: var(--bg3); }
 
-  .filter-tab:hover, .filter-tab.active {
-    border-color: var(--border2);
-    color: var(--text);
-    background: var(--bg3);
-  }
-
-  .title-cards {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
+  .title-cards { display: flex; flex-direction: column; gap: 10px; }
 
   .title-card {
-    background: var(--bg3);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 16px 18px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 16px 18px;
+    display: flex; align-items: center; gap: 14px;
     transition: border-color 0.2s, background 0.2s, transform 0.15s;
     animation: fadeUp 0.4s ease both;
   }
+  .title-card:hover { border-color: var(--border2); background: var(--bg4); transform: translateX(3px); }
 
-  .title-card:hover {
-    border-color: var(--border2);
-    background: var(--bg4);
-    transform: translateX(3px);
-  }
+  .title-num { font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--text3); min-width: 24px; text-align: right; }
+  .title-content { flex: 1; min-width: 0; }
+  .title-text { font-size: 15px; font-weight: 400; color: var(--text); line-height: 1.4; margin-bottom: 4px; }
 
-  .title-num {
-    font-family: var(--font-display);
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--text3);
-    min-width: 24px;
-    text-align: right;
-  }
-
-  .title-content {
-    flex: 1;
-    min-width: 0;
-  }
-
-  .title-text {
-    font-size: 15px;
-    font-weight: 400;
-    color: var(--text);
-    line-height: 1.4;
-    margin-bottom: 4px;
-  }
-
-  .title-cat-badge {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 500;
-    padding: 2px 10px;
-    border-radius: 100px;
-    letter-spacing: 0.3px;
-  }
-
+  .title-cat-badge { display: inline-block; font-size: 11px; font-weight: 500; padding: 2px 10px; border-radius: 100px; letter-spacing: 0.3px; }
   .badge-viral { background: rgba(251,113,133,0.15); color: var(--coral); }
   .badge-educational { background: rgba(96,165,250,0.15); color: var(--blue); }
   .badge-documentary { background: rgba(167,139,250,0.15); color: var(--purple); }
   .badge-storytelling { background: rgba(52,211,153,0.15); color: var(--teal); }
   .badge-business { background: rgba(251,146,60,0.15); color: var(--orange); }
 
-  .title-actions {
-    display: flex;
-    gap: 6px;
-    flex-shrink: 0;
-  }
-
+  .title-actions { display: flex; gap: 6px; flex-shrink: 0; }
   .copy-btn {
-    background: var(--bg4);
-    border: 1px solid var(--border2);
-    color: var(--text2);
-    padding: 7px 14px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-family: var(--font-body);
-    white-space: nowrap;
+    background: var(--bg4); border: 1px solid var(--border2);
+    color: var(--text2); padding: 7px 14px; border-radius: 8px;
+    font-size: 13px; font-weight: 500; cursor: pointer;
+    transition: all 0.2s; display: flex; align-items: center; gap: 5px;
+    font-family: var(--font-body); white-space: nowrap;
   }
-
   .copy-btn svg { width: 13px; height: 13px; stroke: currentColor; fill: none; }
-
-  .copy-btn:hover {
-    background: var(--accent-dim);
-    border-color: rgba(232,255,87,0.3);
-    color: var(--accent);
-  }
-
-  .copy-btn.copied {
-    background: rgba(52,211,153,0.15);
-    border-color: rgba(52,211,153,0.3);
-    color: var(--teal);
-  }
+  .copy-btn:hover { background: var(--accent-dim); border-color: rgba(232,255,87,0.3); color: var(--accent); }
+  .copy-btn.copied { background: rgba(52,211,153,0.15); border-color: rgba(52,211,153,0.3); color: var(--teal); }
 
   .copy-all-btn {
-    width: 100%;
-    margin-top: 1rem;
-    padding: 12px;
-    background: var(--bg3);
-    border: 1px dashed var(--border2);
-    border-radius: var(--radius);
-    color: var(--text2);
-    font-size: 14px;
-    font-weight: 400;
-    cursor: pointer;
-    transition: all 0.2s;
-    font-family: var(--font-body);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    width: 100%; margin-top: 1rem; padding: 12px;
+    background: var(--bg3); border: 1px dashed var(--border2);
+    border-radius: var(--radius); color: var(--text2);
+    font-size: 14px; font-weight: 400; cursor: pointer;
+    transition: all 0.2s; font-family: var(--font-body);
+    display: flex; align-items: center; justify-content: center; gap: 8px;
   }
+  .copy-all-btn:hover { border-style: solid; border-color: var(--border2); color: var(--text); background: var(--bg4); }
 
-  .copy-all-btn:hover {
-    border-style: solid;
-    border-color: var(--border2);
-    color: var(--text);
-    background: var(--bg4);
-  }
-
-  /* ───── EXAMPLES SECTION ───── */
   .examples-section {
-    position: relative;
-    z-index: 1;
-    padding: 80px 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
+    position: relative; z-index: 1;
+    padding: 80px 2rem; max-width: 1100px; margin: 0 auto;
     border-top: 1px solid var(--border);
   }
 
   .examples-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1px;
-    background: var(--border);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    margin-top: 2.5rem;
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1px; background: var(--border);
+    border: 1px solid var(--border); border-radius: var(--radius-lg);
+    overflow: hidden; margin-top: 2.5rem;
   }
-
-  .example-card {
-    background: var(--bg2);
-    padding: 1.75rem;
-    transition: background 0.2s;
-  }
-
+  .example-card { background: var(--bg2); padding: 1.75rem; transition: background 0.2s; }
   .example-card:hover { background: var(--bg3); }
-
-  .example-cat {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
-  }
-
+  .example-cat { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem; }
   .example-cat.viral { color: var(--coral); }
   .example-cat.educational { color: var(--blue); }
   .example-cat.documentary { color: var(--purple); }
   .example-cat.storytelling { color: var(--teal); }
   .example-cat.business { color: var(--orange); }
 
-  .example-title {
-    font-size: 14px;
-    color: var(--text);
-    font-weight: 400;
-    line-height: 1.5;
-    margin-bottom: 6px;
-  }
+  .example-title { font-size: 14px; color: var(--text); font-weight: 400; line-height: 1.5; margin-bottom: 6px; }
+  .example-score { font-size: 12px; color: var(--text3); display: flex; align-items: center; gap: 6px; }
+  .score-bar { height: 3px; background: var(--border); border-radius: 100px; width: 60px; overflow: hidden; }
+  .score-fill { height: 100%; background: var(--accent); border-radius: 100px; }
 
-  .example-score {
-    font-size: 12px;
-    color: var(--text3);
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .score-bar {
-    height: 3px;
-    background: var(--border);
-    border-radius: 100px;
-    width: 60px;
-    overflow: hidden;
-  }
-
-  .score-fill {
-    height: 100%;
-    background: var(--accent);
-    border-radius: 100px;
-  }
-
-  /* ───── HOW IT WORKS ───── */
   .how-section {
-    position: relative;
-    z-index: 1;
-    padding: 80px 2rem;
-    max-width: 1100px;
-    margin: 0 auto;
+    position: relative; z-index: 1;
+    padding: 80px 2rem; max-width: 1100px; margin: 0 auto;
     border-top: 1px solid var(--border);
   }
 
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  .step {
-    position: relative;
-  }
-
-  .step-num {
-    font-family: var(--font-display);
-    font-size: 4rem;
-    font-weight: 800;
-    color: var(--border);
-    line-height: 1;
-    margin-bottom: 1rem;
-    -webkit-text-stroke: 1px rgba(255,255,255,0.06);
-  }
-
-  .step-icon {
-    width: 44px;
-    height: 44px;
-    background: var(--accent-dim);
-    border: 1px solid rgba(232,255,87,0.2);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 1rem;
-  }
-
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
+  .step { position: relative; }
+  .step-num { font-family: var(--font-display); font-size: 4rem; font-weight: 800; color: var(--border); line-height: 1; margin-bottom: 1rem; -webkit-text-stroke: 1px rgba(255,255,255,0.06); }
+  .step-icon { width: 44px; height: 44px; background: var(--accent-dim); border: 1px solid rgba(232,255,87,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem; }
   .step-icon svg { width: 22px; height: 22px; stroke: var(--accent); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .step-title { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text); }
+  .step-desc { font-size: 14px; color: var(--text2); font-weight: 300; line-height: 1.7; }
 
-  .step-title {
-    font-family: var(--font-display);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text);
-  }
-
-  .step-desc {
-    font-size: 14px;
-    color: var(--text2);
-    font-weight: 300;
-    line-height: 1.7;
-  }
-
-  /* ───── FOOTER ───── */
-  footer {
-    position: relative;
-    z-index: 1;
-    border-top: 1px solid var(--border);
-    padding: 2.5rem 2rem;
-    background: var(--bg2);
-  }
-
-  .footer-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-  }
-
+  footer { position: relative; z-index: 1; border-top: 1px solid var(--border); padding: 2.5rem 2rem; background: var(--bg2); }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; }
   .footer-brand { display: flex; align-items: center; gap: 10px; }
-
-  .footer-copy {
-    font-size: 13px;
-    color: var(--text3);
-  }
-
-  .footer-links {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-  }
-
-  .footer-links a {
-    color: var(--text3);
-    text-decoration: none;
-    font-size: 13px;
-    transition: color 0.2s;
-  }
-
+  .footer-copy { font-size: 13px; color: var(--text3); }
+  .footer-links { display: flex; gap: 1.5rem; list-style: none; }
+  .footer-links a { color: var(--text3); text-decoration: none; font-size: 13px; transition: color 0.2s; }
   .footer-links a:hover { color: var(--text2); }
-
-  .footer-tagline {
-    font-size: 13px;
-    color: var(--text3);
-  }
-
+  .footer-tagline { font-size: 13px; color: var(--text3); }
   .footer-tagline span { color: var(--accent); }
 
-  /* ───── ERROR ───── */
-  .error-msg {
-    display: none;
-    background: rgba(251,113,133,0.1);
-    border: 1px solid rgba(251,113,133,0.2);
-    border-radius: var(--radius);
-    padding: 12px 16px;
-    color: var(--coral);
-    font-size: 14px;
-    margin-top: 1rem;
-  }
-
+  .error-msg { display: none; background: rgba(251,113,133,0.1); border: 1px solid rgba(251,113,133,0.2); border-radius: var(--radius); padding: 12px 16px; color: var(--coral); font-size: 14px; margin-top: 1rem; }
   .error-msg.visible { display: block; }
 
-  /* ───── ANIMATIONS ───── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
   }
+  @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* ───── RESPONSIVE ───── */
   @media (max-width: 768px) {
     .nav-links { display: none; }
-    .nav-links.open {
-      display: flex;
-      flex-direction: column;
-      position: fixed;
-      inset: 64px 0 0;
-      background: rgba(10,10,15,0.97);
-      padding: 2rem;
-      gap: 1.5rem;
-      z-index: 99;
-      backdrop-filter: blur(20px);
-    }
+    .nav-links.open { display: flex; flex-direction: column; position: fixed; inset: 64px 0 0; background: rgba(10,10,15,0.97); padding: 2rem; gap: 1.5rem; z-index: 99; backdrop-filter: blur(20px); }
     .nav-links.open a { font-size: 18px; }
     .nav-mobile-btn { display: flex; align-items: center; }
     .hero h1 { letter-spacing: -1px; }
@@ -966,7 +428,6 @@
     .footer-inner { flex-direction: column; align-items: flex-start; }
     .steps-grid { grid-template-columns: 1fr 1fr; }
   }
-
   @media (max-width: 480px) {
     nav { padding: 0 1rem; }
     .hero { padding: 100px 1rem 60px; }
@@ -975,40 +436,16 @@
     .steps-grid { grid-template-columns: 1fr; }
   }
 
-  /* ───── GLOW ORBS ───── */
-  .orb {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(100px);
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.12;
-  }
-
-  .orb-1 {
-    width: 600px;
-    height: 600px;
-    background: var(--accent);
-    top: -200px;
-    right: -200px;
-  }
-
-  .orb-2 {
-    width: 500px;
-    height: 500px;
-    background: #7c3aed;
-    bottom: 0;
-    left: -200px;
-  }
+  .orb { position: fixed; border-radius: 50%; filter: blur(100px); pointer-events: none; z-index: 0; opacity: 0.12; }
+  .orb-1 { width: 600px; height: 600px; background: var(--accent); top: -200px; right: -200px; }
+  .orb-2 { width: 500px; height: 500px; background: #7c3aed; bottom: 0; left: -200px; }
 </style>
 </head>
 <body>
 
-<!-- ambient orbs -->
 <div class="orb orb-1"></div>
 <div class="orb orb-2"></div>
 
-<!-- ───── NAV ───── -->
 <nav>
   <a href="#" class="logo">
     <div class="logo-icon">
@@ -1016,65 +453,41 @@
     </div>
     <span class="logo-text">Title<span>Forge</span></span>
   </a>
-
   <ul class="nav-links" id="navLinks">
     <li><a href="#generator">Generator</a></li>
     <li><a href="#examples">Examples</a></li>
     <li><a href="#how-it-works">How it works</a></li>
     <li><a href="#generator" class="nav-cta">Start free →</a></li>
   </ul>
-
   <button class="nav-mobile-btn" id="mobileMenu" aria-label="Toggle menu">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
-      <line x1="3" y1="6" x2="21" y2="6"/>
-      <line x1="3" y1="12" x2="21" y2="12"/>
-      <line x1="3" y1="18" x2="21" y2="18"/>
+      <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
     </svg>
   </button>
 </nav>
 
-<!-- ───── HERO ───── -->
 <section class="hero" id="home">
   <div class="hero-badge">✦ Powered by Claude AI</div>
-
   <h1>
     <span class="line1">Stop losing</span>
     <span class="line2">to bad titles.</span>
   </h1>
-
   <p class="hero-sub">TitleForge uses advanced AI to generate 10 high-performing YouTube title ideas — tailored to your content's style, category, and audience intent.</p>
-
   <div class="hero-actions">
     <a href="#generator" class="btn-primary">Generate titles free →</a>
     <a href="#examples" class="btn-ghost">See examples</a>
   </div>
 </section>
 
-<!-- ───── STATS ───── -->
 <div class="stats-bar">
-  <div class="stat">
-    <span class="stat-num">10×</span>
-    <span class="stat-label">Titles per generate</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">5</span>
-    <span class="stat-label">Style categories</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">2s</span>
-    <span class="stat-label">Average generate time</span>
-  </div>
-  <div class="stat">
-    <span class="stat-num">Free</span>
-    <span class="stat-label">No account needed</span>
-  </div>
+  <div class="stat"><span class="stat-num">10×</span><span class="stat-label">Titles per generate</span></div>
+  <div class="stat"><span class="stat-num">5</span><span class="stat-label">Style categories</span></div>
+  <div class="stat"><span class="stat-num">2s</span><span class="stat-label">Average generate time</span></div>
+  <div class="stat"><span class="stat-num">Free</span><span class="stat-label">No account needed</span></div>
 </div>
 
-<!-- ───── GENERATOR ───── -->
 <section class="generator-section" id="generator">
-  <div class="section-label">
-    <span>Generator</span>
-  </div>
+  <div class="section-label"><span>Generator</span></div>
   <h2 class="section-title">Describe your video</h2>
   <p class="section-desc">Tell us what your video is about and pick a style. We'll handle the rest.</p>
 
@@ -1105,10 +518,8 @@
     </div>
   </div>
 
-  <!-- error -->
   <div class="error-msg" id="errorMsg"></div>
 
-  <!-- loading -->
   <div class="loading-state" id="loadingState">
     <div class="loader-dots">
       <div class="loader-dot"></div>
@@ -1118,13 +529,11 @@
     <p class="loading-text" id="loadingText">Analyzing your video content…</p>
   </div>
 
-  <!-- results -->
   <div class="results-section" id="resultsSection">
     <div class="results-header">
       <div class="results-title">Generated Titles</div>
       <div class="results-meta" id="resultsMeta">10 titles generated</div>
     </div>
-
     <div class="filter-tabs" id="filterTabs">
       <button class="filter-tab active" data-filter="all">All</button>
       <button class="filter-tab" data-filter="Viral">Viral</button>
@@ -1133,9 +542,7 @@
       <button class="filter-tab" data-filter="Storytelling">Storytelling</button>
       <button class="filter-tab" data-filter="Business">Business</button>
     </div>
-
     <div class="title-cards" id="titleCards"></div>
-
     <button class="copy-all-btn" id="copyAllBtn">
       <svg width="15" height="15" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-width="1.5" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
       Copy all titles
@@ -1143,110 +550,75 @@
   </div>
 </section>
 
-<!-- ───── EXAMPLES ───── -->
 <section class="examples-section" id="examples">
-  <div class="section-label">
-    <span>Examples</span>
-  </div>
+  <div class="section-label"><span>Examples</span></div>
   <h2 class="section-title">What TitleForge creates</h2>
   <p class="section-desc">Real titles generated from a single video idea — across every style.</p>
-
   <div class="examples-grid">
     <div class="example-card">
       <div class="example-cat viral">Viral</div>
       <div class="example-title">I Made Sourdough Bread Every Day for 30 Days — Here's What Happened</div>
-      <div class="example-score">
-        <div class="score-bar"><div class="score-fill" style="width:92%"></div></div>
-        92% click potential
-      </div>
+      <div class="example-score"><div class="score-bar"><div class="score-fill" style="width:92%"></div></div>92% click potential</div>
     </div>
     <div class="example-card">
       <div class="example-cat educational">Educational</div>
       <div class="example-title">The Complete Beginner's Guide to Sourdough: Starter to Loaf in 7 Days</div>
-      <div class="example-score">
-        <div class="score-bar"><div class="score-fill" style="width:87%"></div></div>
-        87% click potential
-      </div>
+      <div class="example-score"><div class="score-bar"><div class="score-fill" style="width:87%"></div></div>87% click potential</div>
     </div>
     <div class="example-card">
       <div class="example-cat documentary">Documentary</div>
       <div class="example-title">Ancient Bread in a Modern Kitchen: The Science of Fermentation</div>
-      <div class="example-score">
-        <div class="score-bar"><div class="score-fill" style="width:78%"></div></div>
-        78% click potential
-      </div>
+      <div class="example-score"><div class="score-bar"><div class="score-fill" style="width:78%"></div></div>78% click potential</div>
     </div>
     <div class="example-card">
       <div class="example-cat storytelling">Storytelling</div>
       <div class="example-title">The Loaf That Changed My Relationship with Food (And Patience)</div>
-      <div class="example-score">
-        <div class="score-bar"><div class="score-fill" style="width:84%"></div></div>
-        84% click potential
-      </div>
+      <div class="example-score"><div class="score-bar"><div class="score-fill" style="width:84%"></div></div>84% click potential</div>
     </div>
     <div class="example-card">
       <div class="example-cat business">Business</div>
       <div class="example-title">Why Sourdough Bakeries Are Charging $14 a Loaf — And Getting It</div>
-      <div class="example-score">
-        <div class="score-bar"><div class="score-fill" style="width:89%"></div></div>
-        89% click potential
-      </div>
+      <div class="example-score"><div class="score-bar"><div class="score-fill" style="width:89%"></div></div>89% click potential</div>
     </div>
     <div class="example-card">
       <div class="example-cat viral">Viral</div>
       <div class="example-title">Nobody Tells Beginners This About Sourdough (I Learned the Hard Way)</div>
-      <div class="example-score">
-        <div class="score-bar"><div class="score-fill" style="width:95%"></div></div>
-        95% click potential
-      </div>
+      <div class="example-score"><div class="score-bar"><div class="score-fill" style="width:95%"></div></div>95% click potential</div>
     </div>
   </div>
 </section>
 
-<!-- ───── HOW IT WORKS ───── -->
 <section class="how-section" id="how-it-works">
-  <div class="section-label">
-    <span>How it works</span>
-  </div>
+  <div class="section-label"><span>How it works</span></div>
   <h2 class="section-title">Three steps to better titles</h2>
-
   <div class="steps-grid">
     <div class="step">
       <div class="step-num">01</div>
-      <div class="step-icon">
-        <svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-      </div>
+      <div class="step-icon"><svg viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></div>
       <div class="step-title">Describe your video</div>
       <div class="step-desc">Write a short description of your video's content, topic, and who it's for. More detail = better titles.</div>
     </div>
     <div class="step">
       <div class="step-num">02</div>
-      <div class="step-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-      </div>
+      <div class="step-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></div>
       <div class="step-title">Choose a style</div>
       <div class="step-desc">Pick from Viral, Educational, Documentary, Storytelling, or Business — or generate across all styles at once.</div>
     </div>
     <div class="step">
       <div class="step-num">03</div>
-      <div class="step-icon">
-        <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-      </div>
-      <div class="step-title">Pick & publish</div>
+      <div class="step-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+      <div class="step-title">Pick &amp; publish</div>
       <div class="step-desc">Review 10 AI-crafted titles, copy your favorite with one click, and upload your video with confidence.</div>
     </div>
     <div class="step">
       <div class="step-num">04</div>
-      <div class="step-icon">
-        <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-      </div>
+      <div class="step-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
       <div class="step-title">Grow your channel</div>
       <div class="step-desc">Better titles mean better click-through rates. More clicks means the algorithm pushes your video further.</div>
     </div>
   </div>
 </section>
 
-<!-- ───── FOOTER ───── -->
 <footer>
   <div class="footer-inner">
     <div>
@@ -1258,9 +630,7 @@
       </div>
       <div class="footer-copy" style="margin-top:8px;">© 2025 TitleForge. All rights reserved.</div>
     </div>
-
     <div class="footer-tagline">Built for creators who take growth seriously. <span>✦</span></div>
-
     <ul class="footer-links">
       <li><a href="#">Privacy</a></li>
       <li><a href="#">Terms</a></li>
@@ -1270,27 +640,27 @@
 </footer>
 
 <script>
-const textarea = document.getElementById('video-desc');
-const charCount = document.getElementById('charCount');
+const textarea    = document.getElementById('video-desc');
+const charCount   = document.getElementById('charCount');
 const generateBtn = document.getElementById('generateBtn');
-const loadingState = document.getElementById('loadingState');
+const loadingState= document.getElementById('loadingState');
 const loadingText = document.getElementById('loadingText');
 const resultsSection = document.getElementById('resultsSection');
-const titleCards = document.getElementById('titleCards');
+const titleCards  = document.getElementById('titleCards');
 const resultsMeta = document.getElementById('resultsMeta');
-const errorMsg = document.getElementById('errorMsg');
-const copyAllBtn = document.getElementById('copyAllBtn');
-const navLinks = document.getElementById('navLinks');
-const mobileMenu = document.getElementById('mobileMenu');
+const errorMsg    = document.getElementById('errorMsg');
+const copyAllBtn  = document.getElementById('copyAllBtn');
+const navLinks    = document.getElementById('navLinks');
+const mobileMenu  = document.getElementById('mobileMenu');
 
 let selectedCat = 'Viral';
-let allTitles = [];
-let activeFilter = 'all';
+let allTitles   = [];
+let activeFilter= 'all';
 
 // char count
 textarea.addEventListener('input', () => {
   const len = textarea.value.length;
-  charCount.textContent = `${len} / 500`;
+  charCount.textContent = `${Math.min(len, 500)} / 500`;
   if (len > 500) textarea.value = textarea.value.slice(0, 500);
 });
 
@@ -1314,11 +684,9 @@ document.querySelectorAll('.filter-tab').forEach(tab => {
 });
 
 // mobile menu
-mobileMenu.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
+mobileMenu.addEventListener('click', () => navLinks.classList.toggle('open'));
 
-// loading messages rotation
+// loading messages
 const loadingMessages = [
   'Analyzing your video content…',
   'Researching high-performing patterns…',
@@ -1326,7 +694,6 @@ const loadingMessages = [
   'Optimizing for your audience…',
   'Finalizing 10 title ideas…',
 ];
-
 let loadingInterval;
 function startLoadingMessages() {
   let i = 0;
@@ -1336,22 +703,13 @@ function startLoadingMessages() {
     loadingText.textContent = loadingMessages[i];
   }, 1800);
 }
+function stopLoadingMessages() { clearInterval(loadingInterval); }
 
-function stopLoadingMessages() {
-  clearInterval(loadingInterval);
-}
-
-// generate
+// generate button
 generateBtn.addEventListener('click', async () => {
   const desc = textarea.value.trim();
-  if (!desc) {
-    showError('Please describe your video before generating titles.');
-    return;
-  }
-  if (desc.length < 20) {
-    showError('Please provide a bit more detail about your video (at least 20 characters).');
-    return;
-  }
+  if (!desc) { showError('Please describe your video before generating titles.'); return; }
+  if (desc.length < 20) { showError('Please provide a bit more detail (at least 20 characters).'); return; }
 
   hideError();
   setLoading(true);
@@ -1369,9 +727,8 @@ generateBtn.addEventListener('click', async () => {
   }
 });
 
+// ─── Anthropic API call ───
 async function generateTitles(description, category) {
-  const API_KEY = 'AIzaSyCwjUi2Yelttal8VRU6dUfua6bEQMKSOho'; // 🔑 Replace with your Gemini API key
-
   const prompt = `You are an expert YouTube title strategist with deep knowledge of what drives clicks, watch time, and subscriber growth.
 
 The user wants to create a YouTube video about:
@@ -1393,25 +750,26 @@ Rules for great titles:
 - Keep under 70 characters when possible
 - Use numbers, power words, and specificity
 - Create curiosity gaps without clickbait
-- Match the category's tone precisely
+- Match the category tone precisely
 - Make each title distinct and varied`;
 
-  const response = await fetch(
-    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${API_KEY}`,
-    {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        generationConfig: { temperature: 0.9, maxOutputTokens: 1000 }
-      })
-    }
-  );
+  const response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      model: 'claude-sonnet-4-20250514',
+      max_tokens: 1000,
+      messages: [{ role: 'user', content: prompt }]
+    })
+  });
 
-  if (!response.ok) throw new Error(`API error: ${response.status}`);
+  if (!response.ok) {
+    const errData = await response.json().catch(() => ({}));
+    throw new Error(`API error ${response.status}: ${errData.error?.message || response.statusText}`);
+  }
 
   const data = await response.json();
-  const text = data.candidates[0].content.parts[0].text.trim();
+  const text = data.content.map(b => b.type === 'text' ? b.text : '').join('').trim();
   const clean = text.replace(/```json|```/g, '').trim();
   const parsed = JSON.parse(clean);
   if (!Array.isArray(parsed)) throw new Error('Invalid response format');
@@ -1420,8 +778,7 @@ Rules for great titles:
 
 function renderResults() {
   resultsSection.classList.add('visible');
-  const count = allTitles.length;
-  resultsMeta.textContent = `${count} titles generated`;
+  resultsMeta.textContent = `${allTitles.length} titles generated`;
   renderCards();
   resultsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -1442,19 +799,19 @@ function renderCards() {
     const card = document.createElement('div');
     card.className = 'title-card';
     card.style.animationDelay = `${i * 0.06}s`;
+    const catKey = (t.category || 'viral').toLowerCase();
     card.innerHTML = `
       <div class="title-num">${String(i + 1).padStart(2, '0')}</div>
       <div class="title-content">
         <div class="title-text">${escapeHtml(t.title)}</div>
-        <span class="title-cat-badge badge-${t.category ? t.category.toLowerCase() : 'viral'}">${t.category || 'Viral'}</span>
+        <span class="title-cat-badge badge-${catKey}">${t.category || 'Viral'}</span>
       </div>
       <div class="title-actions">
         <button class="copy-btn" data-title="${escapeAttr(t.title)}">
           <svg viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
           Copy
         </button>
-      </div>
-    `;
+      </div>`;
     titleCards.appendChild(card);
   });
 
@@ -1473,17 +830,10 @@ function copyTitle(btn, text) {
     }, 2000);
   }).catch(() => {
     const ta = document.createElement('textarea');
-    ta.value = text;
-    document.body.appendChild(ta);
-    ta.select();
-    document.execCommand('copy');
-    document.body.removeChild(ta);
-    btn.classList.add('copied');
-    btn.textContent = 'Copied!';
-    setTimeout(() => {
-      btn.classList.remove('copied');
-      btn.textContent = 'Copy';
-    }, 2000);
+    ta.value = text; document.body.appendChild(ta); ta.select();
+    document.execCommand('copy'); document.body.removeChild(ta);
+    btn.classList.add('copied'); btn.textContent = 'Copied!';
+    setTimeout(() => { btn.classList.remove('copied'); btn.textContent = 'Copy'; }, 2000);
   });
 }
 
@@ -1497,41 +847,19 @@ copyAllBtn.addEventListener('click', () => {
   });
 });
 
-function setLoading(state) {
-  generateBtn.disabled = state;
-  generateBtn.innerHTML = state
-    ? '<svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#0a0a0f;animation:spin 1s linear infinite"><path d="M12 2a10 10 0 0110 10"/></svg> Generating…'
-    : '<svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#0a0a0f;"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Generate 10 Titles';
-
-  if (state) {
-    loadingState.classList.add('visible');
-    startLoadingMessages();
-  } else {
-    loadingState.classList.remove('visible');
-    stopLoadingMessages();
-  }
+function setLoading(on) {
+  generateBtn.disabled = on;
+  generateBtn.innerHTML = on
+    ? `<svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#0a0a0f;animation:spin 1s linear infinite"><path d="M12 2a10 10 0 0110 10"/></svg> Generating…`
+    : `<svg viewBox="0 0 24 24" style="width:16px;height:16px;fill:#0a0a0f;"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg> Generate 10 Titles`;
+  if (on) { loadingState.classList.add('visible'); startLoadingMessages(); }
+  else    { loadingState.classList.remove('visible'); stopLoadingMessages(); }
 }
 
-function showError(msg) {
-  errorMsg.textContent = msg;
-  errorMsg.classList.add('visible');
-}
-
-function hideError() {
-  errorMsg.classList.remove('visible');
-}
-
-function escapeHtml(s) {
-  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
-}
-
-function escapeAttr(s) {
-  return s.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
-}
-
-const style = document.createElement('style');
-style.textContent = `@keyframes spin { to { transform: rotate(360deg); } }`;
-document.head.appendChild(style);
+function showError(msg) { errorMsg.textContent = msg; errorMsg.classList.add('visible'); }
+function hideError()    { errorMsg.classList.remove('visible'); }
+function escapeHtml(s)  { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function escapeAttr(s)  { return s.replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 </script>
 </body>
 </html>
