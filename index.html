@@ -722,58 +722,32 @@ generateBtn.addEventListener('click', async () => {
     renderResults();
   } catch (err) {
     setLoading(false);
-    showError('Something went wrong. Please try again in a moment.');
+    showError(err.message || 'Something went wrong. Please try again.');
     console.error(err);
   }
 });
 
-// ─── Anthropic API call ───
+// ─── Backend API call (Fixed) ───
 async function generateTitles(description, category) {
-  const prompt = `You are an expert YouTube title strategist with deep knowledge of what drives clicks, watch time, and subscriber growth.
-
-The user wants to create a YouTube video about:
-"${description}"
-
-Requested style: ${category}
-
-Generate exactly 10 compelling YouTube title ideas. Create a mix across these 5 categories (2 titles each):
-- Viral (emotional, curiosity gaps, surprising angles)
-- Educational (clear value, step-by-step, informative)
-- Documentary (investigative, cinematic, narrative-driven)
-- Storytelling (personal, journey-based, relatable)
-- Business (ROI-focused, professional, trend-aware)
-
-Return ONLY a JSON array with exactly 10 objects. No markdown, no backticks, no preamble. Format:
-[{"title":"...","category":"Viral"},{"title":"...","category":"Educational"},...]
-
-Rules for great titles:
-- Keep under 70 characters when possible
-- Use numbers, power words, and specificity
-- Create curiosity gaps without clickbait
-- Match the category tone precisely
-- Make each title distinct and varied`;
-
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
+  const response = await fetch('/api/generate-titles', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1000,
-      messages: [{ role: 'user', content: prompt }]
-    })
+      description: description,
+      category: category,
+    }),
   });
 
   if (!response.ok) {
     const errData = await response.json().catch(() => ({}));
-    throw new Error(`API error ${response.status}: ${errData.error?.message || response.statusText}`);
+    throw new Error(errData.error || `API error ${response.status}`);
   }
 
   const data = await response.json();
-  const text = data.content.map(b => b.type === 'text' ? b.text : '').join('').trim();
-  const clean = text.replace(/```json|```/g, '').trim();
-  const parsed = JSON.parse(clean);
-  if (!Array.isArray(parsed)) throw new Error('Invalid response format');
-  return parsed;
+  if (!data.titles || !Array.isArray(data.titles)) {
+    throw new Error('Invalid response format');
+  }
+  return data.titles;
 }
 
 function renderResults() {
