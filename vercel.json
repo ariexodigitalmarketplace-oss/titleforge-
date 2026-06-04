@@ -1,0 +1,16 @@
+{
+  "buildCommand": "echo 'Build complete'",
+  "env": {
+    "GEMINI_API_KEY": "@gemini_api_key"
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
